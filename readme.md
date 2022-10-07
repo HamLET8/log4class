@@ -5,7 +5,8 @@
     logInfo("The log is info message");
     logFatal("The log is fatal message");
     logWarn("The log is warn message");
-include log4class.hh header and compile with log4class.cpp file
+    
+install log4cpp ,include log4class.hh header and compile with log4class.cpp file
 compile way: 
 ``` 
 g++ *.cpp -o main -llog4cpp -lpthread 
@@ -21,3 +22,4 @@ layout:PatternLayout. output fomat: ("%d: %p %c %x: %m%n")
 appender:RollingFileAppender. 10 backup file ,each have 5 kB;
 priority: debug
 
+# next mission: format input and output
