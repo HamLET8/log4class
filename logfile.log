@@ -1,0 +1,15 @@
+2022-10-07 12:30:14,449: FATAL  : The log is error message	 File: argvar.cpp	 Line: 15	 Func: main
+2022-10-07 12:33:15,368: FATAL  : The log is error message	 File: argvar.cpp	 Line: 19	 Func: main
+2022-10-07 12:33:15,368: CRIT  : The log is crit message	 File: argvar.cpp	 Line: 20	 Func: main
+2022-10-07 12:33:15,368: INFO  : The log is debug message	 File: argvar.cpp	 Line: 21	 Func: main
+2022-10-07 12:33:15,368: DEBUG  : The log is info message	 File: argvar.cpp	 Line: 22	 Func: main
+2022-10-07 12:33:15,368: ERROR  : The log is fatal message	 File: argvar.cpp	 Line: 23	 Func: main
+2022-10-07 12:33:15,368: WARN  : The log is warn message	 File: argvar.cpp	 Line: 24	 Func: main
+2022-10-07 12:33:15,368: DEBUG  : The log is info message	 File: argvar.cpp	 Line: 11	 Func: func
+2022-10-07 12:34:46,976: FATAL  : The log is error message	 File: argvar.cpp	 Line: 19	 Func: main
+2022-10-07 12:34:46,977: CRIT  : The log is crit message	 File: argvar.cpp	 Line: 20	 Func: main
+2022-10-07 12:34:46,977: DEBUG  : The log is debug message	 File: argvar.cpp	 Line: 21	 Func: main
+2022-10-07 12:34:46,977: INFO  : The log is info message	 File: argvar.cpp	 Line: 22	 Func: main
+2022-10-07 12:34:46,977: ERROR  : The log is fatal message	 File: argvar.cpp	 Line: 23	 Func: main
+2022-10-07 12:34:46,977: WARN  : The log is warn message	 File: argvar.cpp	 Line: 24	 Func: main
+2022-10-07 12:34:46,977: INFO  : The log is info message	 File: argvar.cpp	 Line: 11	 Func: func
