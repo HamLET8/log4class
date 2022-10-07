@@ -6,7 +6,7 @@
     logFatal("The log is fatal message");
     logWarn("The log is warn message");
 include log4class.hh header and compile with log4class.cpp file
-compile way: g++ *.cpp log4class.cpp -o argvar -llog4cpp -lpthread
+compile way: g++ *.cpp -o main -llog4cpp -lpthread
 
 ### it will put the smessage into "logfile.log" file, and the config of log4class follows:
 
