@@ -27,5 +27,3 @@ layout:PatternLayout. output fomat: ("%d: %p %c %x: %m%n")
 ```
 appender:RollingFileAppender. 10 backup file ,each have 5 kB;
 priority: debug
-
-# next mission: format input and output
