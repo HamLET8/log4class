@@ -1,13 +1,19 @@
 ### The log4class is convinient way to use log4cpp, which provides six api to use.
+ ```text
     logError("The log is error message");
     logCrit("The log is crit message");
     logDebug("The log is debug message");
     logInfo("The log is info message");
     logFatal("The log is fatal message");
     logWarn("The log is warn message");
-    
-install log4cpp ,include log4class.hh header and compile with log4class.cpp file
-compile way: 
+ ```
+ and support format style as printf
+ ```text
+    logError("error , var a : %d\n", a);
+ ```
+install log4cpp ,include log4class.hh header and compile with log4class.cpp file.
+
+compile command: 
 ``` 
 g++ *.cpp -o main -llog4cpp -lpthread 
 ```
