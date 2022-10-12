@@ -4,6 +4,7 @@
 #include <log4cpp/Category.hh>
 #include <log4cpp/Priority.hh>
 #include <string>
+#include <memory>
 #include <utility>
 #define __MAX_LINE_LENS__ 100
 
@@ -31,12 +32,12 @@ private:
 };
 
 
-void log_fatal( std::string&& msg, const char *fileName, const int Line, const char *FuncName);
-void log_crit( std::string&& msg, const char *fileName, const int Line, const char *FuncName);
-void log_warn( std::string&& msg, const char *fileName, const int Line, const char *FuncName);
-void log_error(std::string&& msg, const char *fileName, const int Line, const char *FuncName);
-void log_debug(std::string&& msg, const char *fileName, const int Line, const char *FuncName);
-void log_info( std::string&& msg, const char *fileName, const int Line, const char *FuncName);
+void log_fatal(std::shared_ptr<std::string> msg, const char *fileName, const int Line, const char *FuncName);
+void log_crit( std::shared_ptr<std::string> msg, const char *fileName, const int Line, const char *FuncName);
+void log_warn( std::shared_ptr<std::string> msg, const char *fileName, const int Line, const char *FuncName);
+void log_error(std::shared_ptr<std::string> msg, const char *fileName, const int Line, const char *FuncName);
+void log_debug(std::shared_ptr<std::string> msg, const char *fileName, const int Line, const char *FuncName);
+void log_info( std::shared_ptr<std::string> msg, const char *fileName, const int Line, const char *FuncName);
 
 #define logError(args...) log_error((log_fmt(args)), __FILE__, __LINE__, __func__) //record current file,line,and function
 #define logCrit(args...)  log_crit(( log_fmt(args)), __FILE__, __LINE__, __func__)
@@ -47,13 +48,12 @@ void log_info( std::string&& msg, const char *fileName, const int Line, const ch
 
 
 template<typename...Args>
-std::string log_fmt(const char* fmt, Args...args){ //get a format string ,then send to log 
+std::shared_ptr<std::string> log_fmt(const char* fmt, Args...args){ //get a format string ,then send to log 
 	
-	char nfmt[__MAX_LINE_LENS__] = {0};; //max number of  a format string 	
+	char nfmt[__MAX_LINE_LENS__] = {0}; //max number of  a format string 	
 	sprintf(nfmt, fmt, args...);
 	
-	std::string fmt_temp(nfmt);
-	return fmt_temp;
+	return std::make_shared<std::string>(nfmt);
 }
 
 

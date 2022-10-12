@@ -51,39 +51,39 @@ void Mylogger::info(const char* msg){
     root.info(msg);
 }
 
-void log_error(std::string&& msg, const char *fileName, const int Line, const char *FuncName){
+void log_error(std::shared_ptr<std::string> msg, const char *fileName, const int Line, const char *FuncName){
     //std::string msg_a(std::move(msg)); // 
-    std::string msgs =  msg + "\t File: " + fileName + "\t Line: " + std::to_string(Line) + "\t Func: " + FuncName;
+    std::string msgs =  *msg + "\t File: " + fileName + "\t Line: " + std::to_string(Line) + "\t Func: " + FuncName;
     logger->error(msgs.c_str());
 }
 
-void log_crit(std::string&& msg, const char *fileName, const int Line, const char *FuncName){
+void log_crit(std::shared_ptr<std::string> msg, const char *fileName, const int Line, const char *FuncName){
     //std::string msg_a(std::move(msg));
-    std::string msgs =  msg + "\t File: " + fileName + "\t Line: " + std::to_string(Line) + "\t Func: " + FuncName;
+    std::string msgs =  *msg + "\t File: " + fileName + "\t Line: " + std::to_string(Line) + "\t Func: " + FuncName;
     logger->crit(msgs.c_str());
 }
 
-void log_debug(std::string&& msg, const char *fileName, const int Line, const char *FuncName){
+void log_debug(std::shared_ptr<std::string> msg, const char *fileName, const int Line, const char *FuncName){
     //std::string msg_a(std::move(msg));
-    std::string msgs =  msg + "\t File: " + fileName + "\t Line: " + std::to_string(Line) + "\t Func: " + FuncName;
+    std::string msgs =  *msg + "\t File: " + fileName + "\t Line: " + std::to_string(Line) + "\t Func: " + FuncName;
     logger->debug(msgs.c_str());
 }
 
-void log_warn(std::string&& msg, const char *fileName, const int Line, const char *FuncName){
+void log_warn(std::shared_ptr<std::string> msg, const char *fileName, const int Line, const char *FuncName){
     //std::string msg_a(std::move(msg));
-    std::string msgs =  msg + "\t File: " + fileName + "\t Line: " + std::to_string(Line) + "\t Func: " + FuncName;
+    std::string msgs =  *msg + "\t File: " + fileName + "\t Line: " + std::to_string(Line) + "\t Func: " + FuncName;
     logger->warn(msgs.c_str());
 }
 
-void log_info(std::string&& msg, const char *fileName, const int Line, const char *FuncName){
+void log_info(std::shared_ptr<std::string> msg, const char *fileName, const int Line, const char *FuncName){
     //std::string msg_a(std::move(msg));
-    std::string msgs =  msg + "\t File: " + fileName + "\t Line: " + std::to_string(Line) + "\t Func: " + FuncName;
+    std::string msgs =  *msg + "\t File: " + fileName + "\t Line: " + std::to_string(Line) + "\t Func: " + FuncName;
     logger->info(msgs.c_str());
 }
 
-void log_fatal(std::string&& msg, const char *fileName, const int Line, const char *FuncName){
+void log_fatal(std::shared_ptr<std::string> msg, const char *fileName, const int Line, const char *FuncName){
     //std::string msg_a(std::move(msg));
-    std::string msgs =  msg + "\t File: " + fileName + "\t Line: " + std::to_string(Line) + "\t Func: " + FuncName;
+    std::string msgs =  *msg + "\t File: " + fileName + "\t Line: " + std::to_string(Line) + "\t Func: " + FuncName;
     logger->fatal(msgs.c_str());
 }
 
