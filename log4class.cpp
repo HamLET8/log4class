@@ -12,7 +12,7 @@ Mylogger::Mylogger(const char *conf)
     log4cpp::PatternLayout* ppl = new log4cpp::PatternLayout();
     ppl->setConversionPattern(confPTL);
 
-    log4cpp::RollingFileAppender* rfa = new log4cpp::RollingFileAppender("RollingFileAppender", "logfile.log", 5*1024, 10);
+    log4cpp::RollingFileAppender* rfa = new log4cpp::RollingFileAppender("RollingFileAppender", "logfile.log", 500*1024, 10);
     rfa->setLayout(ppl);
 
     root.setPriority(log4cpp::Priority::DEBUG);
