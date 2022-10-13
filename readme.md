@@ -27,3 +27,7 @@ layout:PatternLayout. output fomat: ("%d: %p %c %x: %m%n")
 ```
 appender:RollingFileAppender. 10 backup file ,each have 5 kB;
 priority: debug
+
+
+time test(closing RVO) : string 500us \t shared_ptr: 800us \t string && 500us
+
