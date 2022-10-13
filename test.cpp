@@ -16,20 +16,23 @@ void func(){
 int main()
 {
     auto start = std::chrono::steady_clock::now();    
-    logError("The ");
-    logCrit("The log is crit message");
-    logDebug("The log is debug message");
-    logInfo("The log is info message");
-    logWarn("The log is warn message");
 
-    const char*  usr  =  "li";
-    logFatal("The log is fatal message! usr : %s", usr);
-    auto end = std::chrono::steady_clock::now();
+    const char * str = "this is a string.";  
+    for(int i = 0; i < 10; ++i){
     
-    auto time_used = end - start ;
+        logError("The log is error message %s", str);
+        logCrit( "The log is crit message %s", str);
+        logDebug("The log is debug message %s", str);
+        logInfo( "The log is info message %s", str);
+        logWarn( "The log is warn message %s", str);
 
+        logFatal("The log is fatal message!  %s", str);
+    }
+   
+    auto end = std::chrono::steady_clock::now();
+    auto time_used = end - start ;
     cout << "cost time: " << time_used.count()  << "ns" << " = " << (time_used.count() /1000) <<"us"<< std::endl;
-    func();
+  //  func();
 
     return 0;
 }
